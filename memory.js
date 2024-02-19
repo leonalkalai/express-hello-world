@@ -1,5 +1,7 @@
 // TODO: Improve the code below to show the memory in MBs or GBs
 
+const os = require('os');
+
 os.totalmem();
 os.freemem(); 
 
