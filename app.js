@@ -18,7 +18,7 @@ const displayTotalMemory = (prop) => {
   }bytes`;
 };
 
-module.exports{
+module.exports = {
   displayTotalMemory
 }
 
