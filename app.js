@@ -30,14 +30,14 @@ const lastName = 'Kountouras';
 const fullname = fullName(firstName, lastName);
 
 const {
-  totalMem,
-  bytesToMegabytes,
-  bytesToGigabytes
+  displayMemoryBytes,
+  displayMemoryMegaBytes,
+  displayMemoryGigaBytes
 } = require('./memory.js');
 
-const bytes = totalMem();
-const megabytes = bytesToMegabytes();
-const gigabytes = bytesToGigabytes();
+const bytes = displayMemoryBytes();
+const megabytes = displayMemoryBytes();
+const gigabytes = displayMemoryBytes();
 
 const html = `
 <!DOCTYPE html>
