@@ -16,10 +16,15 @@ const lastName = 'Kountouras';
 
 const fullname = fullName(firstName, lastName);
 
-const {totalmem} = require('./memory.js');
+const {
+  totalMem,
+  bytesToMegabytes,
+  bytesTogigabytes
+} = require('./memory.js');
 
-const gigamem = totalmem();
-
+const bytes = totalMem();
+const megabytes = bytesToMegabytes();
+const gigabytes = bytesToGigabytes();
 
 const html = `
 <!DOCTYPE html>
@@ -60,8 +65,10 @@ const html = `
   </head>
   <body>
     <section>
-      <p>This is nodej : ${fullname}</p>
-      <p> ${gigamem} </p>
+      <h1>This is nodej test of: ${fullname}</h1>
+      <p> ${bytes} </p>
+      <p> ${megabytes} </p>
+      <p> ${gigabytes} </p>
     </section>
   </body>
 </html>
