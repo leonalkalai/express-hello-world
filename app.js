@@ -56,6 +56,7 @@ const html = `
   <body>
     <section>
       This is nodejs
+      ${fullName}
     </section>
   </body>
 </html>
