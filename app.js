@@ -11,9 +11,9 @@ server.headersTimeout = 120 * 1000;
 
 const displayTotalMemory = (prop) => {
   return `Total Memory in ${
-    prop === totalMem ? bytes :
-    prop === bytesToMegabytes ? mega :
-    prop === bytesToGigabytes ? giga :
+    prop === 'totalMem' ? bytes :
+    prop === 'bytesToMegabytes' ? mega :
+    prop === 'bytesToGigabytes' ? giga :
     ''
   }bytes`;
 };
@@ -35,9 +35,9 @@ const {
   displayMemoryGigaBytes
 } = require('./memory.js');
 
-const bytes = displayMemoryBytes();
-const megabytes = displayMemoryBytes();
-const gigabytes = displayMemoryBytes();
+const bytes = displayMemoryBytes;
+const megabytes = displayMemoryMegaBytes;
+const gigabytes = displayMemoryGigaBytes;
 
 const html = `
 <!DOCTYPE html>
