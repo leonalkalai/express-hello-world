@@ -9,7 +9,7 @@ const server = app.listen(port, () => console.log(`Example app listening on port
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
-const fullnamemodule = require('./student.js');
+const fullnameModule = require('./student.js');
 
 const firstName = 'Leon';
 const lastName = 'Kountouras';
