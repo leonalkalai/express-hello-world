@@ -16,6 +16,11 @@ const lastName = 'Kountouras';
 
 const fullname = fullName(firstName, lastName);
 
+const {totalmem} = require('./memory.js');
+
+const gigamem = totalmem();
+
+
 const html = `
 <!DOCTYPE html>
 <html>
@@ -55,8 +60,8 @@ const html = `
   </head>
   <body>
     <section>
-      This is nodejs
-      ${fullname}
+      <p>This is nodej : ${fullname}</p>
+      <p> ${gigamem} </p>
     </section>
   </body>
 </html>
