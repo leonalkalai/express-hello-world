@@ -19,7 +19,7 @@ const fullname = fullName(firstName, lastName);
 const {
   totalMem,
   bytesToMegabytes,
-  bytesTogigabytes
+  bytesToGigabytes
 } = require('./memory.js');
 
 const bytes = totalMem();
