@@ -17,13 +17,19 @@ const os = require('os');
 
 //os.freemem(); 
 
-const totalMem = () => `Total Memory in bytes: ${os.totalmem()}`;
-const bytesToMegabytes = () => `Total Memory in megabytes: ${os.totalmem() / (1000 ** 2)}`;
-// Google for how to convert bytes into MBs or GBs
-const bytesToGigabytes = () => `Total Memory in gigabytes: ${os.totalmem() / (1000 ** 3)}`;
+const { displayTotalMemory } = require('./app.js');
 
+const totalMem = () => os.totalmem();
+const bytesToMegabytes = () => os.totalmem() / (1000 ** 2);
+// Google for how to convert bytes into MBs or GBs
+const bytesToGigabytes = () => os.totalmem() / (1000 ** 3);
+
+const displayMemoryBytes = displayTotalMemory(totalMem);
+const displayMemoryMegaBytes = displayTotalMemory(totalMem);
+const displayMemoryGigaBytes = displayTotalMemory(totalMem);
+  
 module.exports = {
-  totalMem,
-  bytesToMegabytes,
-  bytesToGigabytes
+  displayMemoryBytes,
+  displayMemoryMegaBytes,
+  displayMemoryGigaBytes
 }
