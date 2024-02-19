@@ -11,10 +11,10 @@ server.headersTimeout = 120 * 1000;
 
 const displayTotalMemory = (prop) => {
   return `Total Memory in ${
-    prop === 'totalMem' ? 'bytes' :
-    ( (prop === 'bytesToMegabytes' ? 'mega' :
-    prop === 'bytesToGigabytes' ? 'giga' : '') + 'bytes')
-  }`;
+    prop === totalMem ? 'bytes' :
+    ( (prop === bytesToMegabytes ? 'mega' :
+    prop === bytesToGigabytes ? 'giga' : '') + 'bytes')
+  } (${prop()})`;
 };
 
 module.exports = {
