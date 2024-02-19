@@ -15,8 +15,7 @@ X = os.totalmem()  *  (1000 ** 3 );
 
 const os = require('os');
 
-os.totalmem();
-os.freemem(); 
+//os.freemem(); 
 
 const totalMem = () => `Total Memory in bytes: ${os.totalmem()}`;
 const bytesToMegabytes = () => `Total Memory in megabytes: ${os.totalmem() / (1000 ** 2)}`;
