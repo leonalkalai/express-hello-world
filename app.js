@@ -9,6 +9,19 @@ const server = app.listen(port, () => console.log(`Example app listening on port
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
+const displayTotalMemory = (prop) => {
+  return `Total Memory in ${
+    prop === totalMem ? bytes :
+    prop === bytesToMegabytes ? mega :
+    prop === bytesToGigabytes ? giga :
+    ''
+  }bytes`;
+};
+
+module.exports{
+  displayTotalMemory
+}
+
 const {fullName} = require('./fullNameModule.js');
 
 const firstName = 'Leon';
