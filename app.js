@@ -95,12 +95,14 @@ const html = `
       }
       section {
         border-radius: 1em;
-        padding: 1em;
+        padding: 1em;    
+        margin-right: -50%;
+        /* 
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); 
+        */
       }
       p{
        background-color:#7BD0F2;
