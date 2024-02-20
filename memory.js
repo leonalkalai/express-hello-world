@@ -12,23 +12,19 @@ X = os.totalmem()  *  (1  / 1000 ** 3 )
 X = os.totalmem()  *  (1000 ** 3 );
 
 */
+const {
+  totalMem,
+  bytesToMegabytes,
+  bytesToGigabytes
+} = require('./utils.js');
 
-const os = require('os');
 const { displayTotalMemory } = require('./app.js');
-
-console.log(displayTotalMemory)
-const totalMem = () => os.totalmem();
-const bytesToMegabytes = () => os.totalmem() / (1000 ** 2);
-const bytesToGigabytes = () => os.totalmem() / (1000 ** 3);
 
 const displayMemoryBytes = displayTotalMemory('totalMem');
 const displayMemoryMegaBytes = displayTotalMemory('bytesToMegabytes');
 const displayMemoryGigaBytes = displayTotalMemory('bytesToGigabytes');
  
 module.exports = {
-  totalMem,
-  bytesToMegabytes,
-  bytesToGigabytes,
   displayMemoryBytes,
   displayMemoryMegaBytes,
   displayMemoryGigaBytes
