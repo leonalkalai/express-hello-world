@@ -89,7 +89,7 @@ const hardwareprops = {
 };
 
 const displayHardwareInfo = (prop) => {
-  const result = `<span class="bytes">${hardwareprops[prop]()}</span>`;
+  const result = `<span class="bytes">${prop}: ${hardwareprops[prop]()}</span>`;
   return `<p>${result}</p>`;
 };
 
@@ -146,6 +146,7 @@ const html = `
        background-color:#fff;
        color:#49B4E5;
        padding:25px;
+       line-height:3em;
       }
       span.bytes{
        background-color:#DEDFDA;
@@ -161,10 +162,10 @@ const html = `
       <div>${servermachine}</div>
       <div>${osversion}</div>
       <div>${osuptime}</div>
-      <div>${userinfo}</div>
+      <div>${userinfo.username}</div>
       <div>${ostype}</div>
       <div>${osplatform}</div>
-      <div>${servercpus}</div>
+      <div>${JSON.stringify(servercpus)}</div>
     </section>
     <section>    
     <section>
