@@ -40,7 +40,7 @@ const displayTotalMemory = (prop) => {
   const result = () => (prop === 'totalMem')  
     ? `${props[prop]()} bytes` 
     : `${numberToInteger(props[prop]())} ${prop === 'bytesToMegabytes' ? 'mega' : 'giga'} bytes`;
-  return `Total Memory is ${result()}`;
+  return `<p>Total Memory is: <span>${result()}</span></p>`;
 };
 
 
@@ -100,14 +100,21 @@ const html = `
         margin-right: -50%;
         transform: translate(-50%, -50%);
       }
+      p{
+       background-color:##7BD0F2;
+      }
+      span{
+       background-color:#DEDFDA;
+       color:#49B4E5;
+      }
     </style>
   </head>
   <body>
     <section>
       <h1>This is nodej test of: ${fullname}</h1>
-      <p> ${bytes} </p>
-      <p> ${megabytes} </p>
-      <p> ${gigabytes} </p>
+      <div> ${bytes} </div>
+      <div> ${megabytes} </div>
+      <div> ${gigabytes} </div>
     </section>
   </body>
 </html>
