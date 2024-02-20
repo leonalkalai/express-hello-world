@@ -24,7 +24,7 @@ const props = {
 };
 
 const displayTotalMemory = (prop) => {
-  return `Total Memory in '${prop}' (${props[prop] ?  props[prop]() : 'Unknown'})`;
+  return `Total Memory in '${prop}' (${props[prop] ?  numberToInteger(props[prop]()) : 'Unknown'})`;
 };
 
 module.exports = {
@@ -44,9 +44,9 @@ const lastName = 'Kountouras';
 
 const fullname = fullName(firstName, lastName);
 
-const bytes = numberToInteger(displayMemoryBytes);
-const megabytes = numberToInteger(displayMemoryMegaBytes);
-const gigabytes = numberToInteger(displayMemoryGigaBytes);
+const bytes = displayMemoryBytes;
+const megabytes = displayMemoryMegaBytes;
+const gigabytes = displayMemoryGigaBytes;
 
 const html = `
 <!DOCTYPE html>
