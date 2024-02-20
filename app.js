@@ -13,9 +13,7 @@ const {exportArgs} = require('./args.js');
 
 const displayArgs = () => {
   const args = exportArgs();
-  args.map( (arg,index)
-    `<p> ${arg} </p>`;
-  ).join('');
+  args.map( (arg,index)`<p> ${arg} </p>`).join('');
 }  
 
 const {
