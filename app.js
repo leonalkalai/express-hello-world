@@ -68,16 +68,6 @@ const bytes = displayMemoryBytes;
 const megabytes = displayMemoryMegaBytes;
 const gigabytes = displayMemoryGigaBytes;
 
-const hardwareprops = {
-  'serverMachine': serverMachine,
-  'osVersion': osVersion,
-  'osUptime': osUptime,
-  'userInfo': userInfo,
-  'osType': osType,
-  'osPlatform': osPlatform,
-  'serverCpus': serverCpus
-};
-
 const {
  serverMachine,
  osVersion,
@@ -87,6 +77,16 @@ const {
  osPlatform,
  serverCpus
 } = require('./hardware.js');
+
+const hardwareprops = {
+  'serverMachine': serverMachine,
+  'osVersion': osVersion,
+  'osUptime': osUptime,
+  'userInfo': userInfo,
+  'osType': osType,
+  'osPlatform': osPlatform,
+  'serverCpus': serverCpus
+};
 
 const displayHardwareInfo = (prop) => {
   const result = `<span class="bytes">${hardwareprops[prop]()}</span>`;
