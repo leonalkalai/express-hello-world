@@ -9,10 +9,12 @@ const server = app.listen(port, () => console.log(`Example app listening on port
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
-const {exportArgs} = require('./args.js');
-
-const displayArgs = exportArgs();
-
+const { argv } = require('node:process');
+const version = process.argv[2];
+if (version){
+  const {exportArgs} = require('./args.js');
+  const displayArgs = exportArgs();
+}
 const {
   numberToInteger,
   totalMem,
@@ -130,7 +132,7 @@ const html = `
     </section>
     <section>
       <h2>${fullname}</h2>
-      <div>${displayArgs}</div>
+      <div>${version?displayArgs:''}</div>
     </section>
   </body>
 </html>
