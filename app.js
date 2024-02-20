@@ -9,6 +9,13 @@ const server = app.listen(port, () => console.log(`Example app listening on port
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
+
+const {
+  totalMem,
+  bytesToMegabytes,
+  bytesToGigabytes
+} = require('./memory.js');
+
 const displayTotalMemory = (prop) => {
   return `Total Memory in ${
     prop === totalMem ? 'bytes' :
@@ -22,9 +29,6 @@ module.exports = {
 }
 
 const {
-  totalMem,
-  bytesToMegabytes,
-  bytesToGigabytes,
   displayMemoryBytes,
   displayMemoryMegaBytes,
   displayMemoryGigaBytes
