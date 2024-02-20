@@ -43,9 +43,9 @@ const lastName = 'Kountouras';
 
 const fullname = fullName(firstName, lastName);
 
-const bytes = displayMemoryBytes;
-const megabytes = displayMemoryMegaBytes;
-const gigabytes = displayMemoryGigaBytes;
+const bytes = displayMemoryBytes.toFixed(1);
+const megabytes = displayMemoryMegaBytes.toFixed(1);
+const gigabytes = displayMemoryGigaBytes.toFixed(1);
 
 const html = `
 <!DOCTYPE html>
