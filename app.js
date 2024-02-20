@@ -22,6 +22,9 @@ module.exports = {
 }
 
 const {
+  totalMem,
+  bytesToMegabytes,
+  bytesToGigabytes,
   displayMemoryBytes,
   displayMemoryMegaBytes,
   displayMemoryGigaBytes
