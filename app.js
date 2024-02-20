@@ -10,11 +10,10 @@ server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
 const { argv } = require('node:process');
+const {exportArgs} = require('./args.js');
 const version = process.argv[2];
-if (version==='leon'){
-  const {exportArgs} = require('./args.js');
-  const displayArgs = exportArgs();
-}
+const displayArgs = version === 'leon'? exportArgs():'';
+ 
 const {
   numberToInteger,
   totalMem,
@@ -132,7 +131,7 @@ const html = `
     </section>
     <section>
       <h2>${fullname}</h2>
-      <div>${version==='leon'?displayArgs:''}</div>
+      <div>${displayArgs}</div>
     </section>
   </body>
 </html>
