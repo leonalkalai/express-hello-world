@@ -38,8 +38,8 @@ const props = {
 
 const displayTotalMemory = (prop) => {
   const result = () => (prop === 'totalMem')  
-    ? `${props[prop]()} bytes` 
-    : `${numberToInteger(props[prop]())} ${prop === 'bytesToMegabytes' ? 'mega' : 'giga'} bytes`;
+    ? `<span>${props[prop]()} bytes</span>` 
+    : `${numberToInteger(props[prop]())} <span>${prop === 'bytesToMegabytes' ? 'mega' : 'giga'} bytes</span>`;
   return `<p>Total Memory is: <span>${result()}</span></p>`;
 };
 
@@ -102,8 +102,12 @@ const html = `
       }
       p{
        background-color:##7BD0F2;
+       padding:25px;
       }
-      span{
+      section> span{
+       background-color:#fff;
+      }
+      section> p > span{
        background-color:#DEDFDA;
        color:#49B4E5;
       }
