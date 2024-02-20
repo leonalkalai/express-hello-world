@@ -69,10 +69,15 @@ const megabytes = displayMemoryMegaBytes;
 const gigabytes = displayMemoryGigaBytes;
 
 const hardwareprops = {
-  'totalMem': totalMem,
-  'bytesToMegabytes': bytesToMegabytes,
-  'bytesToGigabytes': bytesToGigabytes
+  'serverMachine': serverMachine,
+  'osVersion': osVersion,
+  'osUptime': osUptime,
+  'userInfo': userInfo,
+  'osType': osType,
+  'osPlatform': osPlatform,
+  'serverCpus': serverCpus
 };
+
 const {
  serverMachine,
  osVersion,
@@ -84,17 +89,17 @@ const {
 } = require('./hardware.js');
 
 const displayHardwareInfo = (prop) => {
-  const result = `<span class="bytes">${hardwareprops[prop]}</span>`;
+  const result = `<span class="bytes">${hardwareprops[prop]()}</span>`;
   return `<p>${result()}</p>`;
 };
 
- const serverMachine = serverMachine();
- osVersion,
- osUptime,
- userInfo,
- osType,
- osPlatform,
- serverCpus
+const serverMachine = displayHardwareInfo('serverMachine');
+const osVersion = displayHardwareInfo('osVersion');
+const osUptime = displayHardwareInfo('osUptime');
+const userInfo = displayHardwareInfo('userInfo');
+const osType = displayHardwareInfo('osType');
+const osPlatform = displayHardwareInfo('osPlatform');
+const serverCpus = displayHardwareInfo('serverCpus');
 
 const html = `
 <!DOCTYPE html>
@@ -151,6 +156,17 @@ const html = `
   </head>
   <body>
    <h1>This is nodej test of: ${fullname}</h1>
+   <section>
+      <h2>hardware</h2>
+      <div>${serverMachine}</div>
+      <div>${osVersion}</div>
+      <div>${osUptime}</div>
+      <div>${userInfo}</div>
+      <div>${osType}</div>
+      <div>${osPlatform}</div>
+      <div>${serverCpus}</div>
+    </section>
+    <section>    
     <section>
       <h2>${fullname}</h2>
       <div>${bytes}</div>
