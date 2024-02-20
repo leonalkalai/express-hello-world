@@ -45,8 +45,6 @@ const displayTotalMemory = (prop) => {
     : `${numberToInteger(props[prop]())} <span class="bytes">${prop === 'bytesToMegabytes' ? 'mega' : 'giga'}bytes</span>`;
   return `Total Memory is: <p>${result()}</p>`;
 };
-
-const displayargs = displayArgs();
   
 module.exports = {
   displayTotalMemory
