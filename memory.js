@@ -20,9 +20,9 @@ const totalMem = () => os.totalmem();
 const bytesToMegabytes = () => os.totalmem() / (1000 ** 2);
 const bytesToGigabytes = () => os.totalmem() / (1000 ** 3);
 
-const displayMemoryBytes = displayTotalMemory(totalMem);
-const displayMemoryMegaBytes = displayTotalMemory(bytesToMegabytes);
-const displayMemoryGigaBytes = displayTotalMemory(bytesToGigabytes);
+const displayMemoryBytes = displayTotalMemory('totalMem');
+const displayMemoryMegaBytes = displayTotalMemory('bytesToMegabytes');
+const displayMemoryGigaBytes = displayTotalMemory('bytesToGigabytes');
  
 module.exports = {
   totalMem,
