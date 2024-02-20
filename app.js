@@ -100,8 +100,8 @@ const userinfo = displayHardwareInfo('userInfo');
 const ostype = displayHardwareInfo('osType');
 const osplatform = displayHardwareInfo('osPlatform');
 const servercpusobj = displayHardwareInfo('serverCpus');
-const servercpus = servercpusobj.map( ( cpu,index) => cpu );
-
+//const servercpus = servercpusobj.map( ( cpu,index) => cpu );
+const servercpus = typeof(servercpusobj);
 const html = `
 <!DOCTYPE html>
 <html>
