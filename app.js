@@ -93,13 +93,13 @@ const displayHardwareInfo = (prop) => {
   return `<p>${result()}</p>`;
 };
 
-const serverMachine = displayHardwareInfo('serverMachine');
-const osVersion = displayHardwareInfo('osVersion');
-const osUptime = displayHardwareInfo('osUptime');
-const userInfo = displayHardwareInfo('userInfo');
-const osType = displayHardwareInfo('osType');
-const osPlatform = displayHardwareInfo('osPlatform');
-const serverCpus = displayHardwareInfo('serverCpus');
+const servermachine = displayHardwareInfo('serverMachine');
+const osversion = displayHardwareInfo('osVersion');
+const osuptime = displayHardwareInfo('osUptime');
+const userinfo = displayHardwareInfo('userInfo');
+const ostype = displayHardwareInfo('osType');
+const osplatform = displayHardwareInfo('osPlatform');
+const servercpus = displayHardwareInfo('serverCpus');
 
 const html = `
 <!DOCTYPE html>
@@ -158,13 +158,13 @@ const html = `
    <h1>This is nodej test of: ${fullname}</h1>
    <section>
       <h2>hardware</h2>
-      <div>${serverMachine}</div>
-      <div>${osVersion}</div>
-      <div>${osUptime}</div>
-      <div>${userInfo}</div>
-      <div>${osType}</div>
-      <div>${osPlatform}</div>
-      <div>${serverCpus}</div>
+      <div>${servermachine}</div>
+      <div>${osversion}</div>
+      <div>${osuptime}</div>
+      <div>${userinfo}</div>
+      <div>${ostype}</div>
+      <div>${osplatform}</div>
+      <div>${servercpus}</div>
     </section>
     <section>    
     <section>
