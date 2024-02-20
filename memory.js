@@ -29,6 +29,9 @@ const displayMemoryMegaBytes = displayTotalMemory(bytesToMegabytes);
 const displayMemoryGigaBytes = displayTotalMemory(bytesToGigabytes);
   
 module.exports = {
+  totalMem,
+  bytesToMegabytes,
+  bytesToGigabytes,
   displayMemoryBytes,
   displayMemoryMegaBytes,
   displayMemoryGigaBytes
