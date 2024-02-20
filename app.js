@@ -24,17 +24,18 @@ const props = {
 };
 
 const displayTotalMemory = (prop) => {
- const result = () => {
-  if (prop === 'totalMem') {
+  const result = () => {
+    if (prop === 'totalMem') {
       const memValue = props[prop]();
-      return  `${memValue} bytes`;
-  } else {
-    const memValue = props[prop] ? numberToInteger(props[prop]()) : 'Unknown';
-     return  `${memValue} bytes`;
+      return `${memValue} bytes`;
+    } else {
+      const memValue = props[prop] ? numberToInteger(props[prop]()) : 'Unknown';
+      return `${memValue} ${(prop === 'bytesToMegabytes' ? 'mega' : 'giga')}bytes`;
+    }
   }
-}
   return `Total Memory is ${result()}`;
 };
+
 
 
 module.exports = {
