@@ -16,6 +16,12 @@ const {
   bytesToGigabytes
 } = require('./memory.js');
 
+const props = {
+  'totalMem': totalMem,
+  'bytesToMegabytes': bytesToMegabytes,
+  'bytesToGigabytes': bytesToGigabytes
+};
+
 const displayTotalMemory = (prop) => {
   return `Total Memory in '${prop}' (${props[prop] ?  props[prop]() : 'Unknown'})`;
 };
