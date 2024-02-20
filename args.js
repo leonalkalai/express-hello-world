@@ -1,6 +1,6 @@
 const { argv } = require('node:process');
 
-const exportArgs = () => argv.map( (val, index) => `${index}: ${val}` );
+const exportArgs = () => argv.map( (arg,index) => `<p> ${index}: ${arg} </p>`).join('');
 
 module.exports = {
  exportArgs
