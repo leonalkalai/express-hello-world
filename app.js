@@ -23,19 +23,25 @@ const props = {
   'bytesToGigabytes': bytesToGigabytes
 };
 
+// const displayTotalMemory = (prop) => {
+//   const result = () => {
+//     if (prop === 'totalMem') {
+//       const memValue = props[prop]();
+//       return `${memValue} bytes`;
+//     } else {
+//       const memValue = props[prop] ? numberToInteger(props[prop]()) : 'Unknown';
+//       return `${memValue} ${(prop === 'bytesToMegabytes' ? 'mega' : 'giga')}bytes`;
+//     }
+//   }
+//   return `Total Memory is ${result()}`;
+// };
+
 const displayTotalMemory = (prop) => {
-  const result = () => {
-    if (prop === 'totalMem') {
-      const memValue = props[prop]();
-      return `${memValue} bytes`;
-    } else {
-      const memValue = props[prop] ? numberToInteger(props[prop]()) : 'Unknown';
-      return `${memValue} ${(prop === 'bytesToMegabytes' ? 'mega' : 'giga')}bytes`;
-    }
-  }
+  const result = () => (prop === 'totalMem')  
+    ? `${props[prop]()} bytes` 
+    : `${numberToInteger(props[prop]())} ${prop === 'bytesToMegabytes' ? 'mega' : 'giga'} bytes`;
   return `Total Memory is ${result()}`;
 };
-
 
 
 module.exports = {
