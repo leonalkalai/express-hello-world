@@ -17,11 +17,7 @@ const {
 } = require('./memory.js');
 
 const displayTotalMemory = (prop) => {
-  return `Total Memory in ${
-    prop === totalMem ? 'bytes' :
-    ( (prop === bytesToMegabytes ? 'mega' :
-    prop === bytesToGigabytes ? 'giga' : '') + 'bytes')
-  } (${prop()})`;
+  return `Total Memory in '${prop}' (${props[prop] ?  props[prop]() : 'Unknown'})`;
 };
 
 module.exports = {
