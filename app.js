@@ -9,6 +9,14 @@ const server = app.listen(port, () => console.log(`Example app listening on port
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
+const {exportArgs} = require('./args.js');
+
+const displayArgs = () => {
+  const args = exportArgs();
+  args.map( (arg,index)
+    `<p> ${arg} </p>`;
+  ).join('');
+}  
 
 const {
   numberToInteger,
@@ -117,11 +125,16 @@ const html = `
     </style>
   </head>
   <body>
+   <h1>This is nodej test of: ${fullname}</h1>
     <section>
-      <h1>This is nodej test of: ${fullname}</h1>
+      <h2>${fullname}</h2>
       <div>${bytes}</div>
       <div>${megabytes}</div>
       <div>${gigabytes}</div>
+    </section>
+    <section>
+      <h2>${fullname}</h2>
+      <div>${displayArgs}</div>
     </section>
   </body>
 </html>
