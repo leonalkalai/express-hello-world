@@ -101,13 +101,13 @@ const html = `
         transform: translate(-50%, -50%);
       }
       p{
-       background-color:##7BD0F2;
+       background-color:#7BD0F2;
        padding:25px;
       }
-      section> span{
+      div > span{
        background-color:#fff;
       }
-      section> p > span{
+      div > p > span{
        background-color:#DEDFDA;
        color:#49B4E5;
       }
