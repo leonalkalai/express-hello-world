@@ -99,8 +99,8 @@ const osuptime = displayHardwareInfo('osUptime');
 const userinfo = displayHardwareInfo('userInfo');
 const ostype = displayHardwareInfo('osType');
 const osplatform = displayHardwareInfo('osPlatform');
-const servercpus = displayHardwareInfo('serverCpus')
-.map( ( cpu,index) => cpu );
+const servercpusobj = displayHardwareInfo('serverCpus');
+const servercpus = servercpusobj.map( ( cpu,index) => cpu );
 
 const html = `
 <!DOCTYPE html>
