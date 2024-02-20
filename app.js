@@ -51,7 +51,8 @@ const displayTotalMemory = (prop) => {
   return `Total Memory is: <p>${result()}</p>`;
 };
 
-
+const displayargs = displayArgs();
+  
 module.exports = {
   displayTotalMemory
 }
@@ -134,7 +135,7 @@ const html = `
     </section>
     <section>
       <h2>${fullname}</h2>
-      <div>${displayArgs}</div>
+      <div>${displayargs}</div>
     </section>
   </body>
 </html>
