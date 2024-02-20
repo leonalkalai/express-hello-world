@@ -24,8 +24,18 @@ const props = {
 };
 
 const displayTotalMemory = (prop) => {
-  return `Total Memory in '${prop}' (${props[prop] ?  numberToInteger(props[prop]()) : 'Unknown'})`;
+ const result = () => {
+  if (prop === 'totalMem') {
+      const memValue = props[prop]();
+      return  `${memValue} bytes`;
+  } else {
+    const memValue = props[prop] ? numberToInteger(props[prop]()) : 'Unknown';
+     return  `${memValue} bytes`;
+  }
+}
+  return `Total Memory is ${result()}`;
 };
+
 
 module.exports = {
   displayTotalMemory
