@@ -11,10 +11,7 @@ server.headersTimeout = 120 * 1000;
 
 const {exportArgs} = require('./args.js');
 
-const displayArgs = () => {
-  const args = exportArgs();
-  args.map( (arg,index) => `<p> ${arg} </p>`).join('');
-}  
+const displayArgs = exportArgs();
 
 const {
   numberToInteger,
@@ -133,7 +130,7 @@ const html = `
     </section>
     <section>
       <h2>${fullname}</h2>
-      <div>${displayargs}</div>
+      <div>${displayArgs}</div>
     </section>
   </body>
 </html>
