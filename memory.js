@@ -12,13 +12,14 @@ X = os.totalmem()  *  (1  / 1000 ** 3 )
 X = os.totalmem()  *  (1000 ** 3 );
 
 */
+
+const { displayTotalMemory } = require('./app.js');
+
 const {
   totalMem,
   bytesToMegabytes,
   bytesToGigabytes
 } = require('./utils.js');
-
-const { displayTotalMemory } = require('./app.js');
 
 const displayMemoryBytes = displayTotalMemory('totalMem');
 const displayMemoryMegaBytes = displayTotalMemory('bytesToMegabytes');
