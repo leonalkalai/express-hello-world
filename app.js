@@ -21,7 +21,7 @@ const {
   bytesToGigabytes
 } = require('./utils.js');
 
-const props = {
+const memprops = {
   'totalMem': totalMem,
   'bytesToMegabytes': bytesToMegabytes,
   'bytesToGigabytes': bytesToGigabytes
@@ -42,8 +42,8 @@ const props = {
 
 const displayTotalMemory = (prop) => {
   const result = () => (prop === 'totalMem')  
-    ? `${props[prop]()} <span class="bytes">bytes</span>` 
-    : `${numberToInteger(props[prop]())} <span class="bytes">${prop === 'bytesToMegabytes' ? 'mega' : 'giga'}bytes</span>`;
+    ? `${memprops[prop]()} <span class="bytes">bytes</span>` 
+    : `${numberToInteger(memprops[prop]())} <span class="bytes">${prop === 'bytesToMegabytes' ? 'mega' : 'giga'}bytes</span>`;
   return `Total Memory is: <p>${result()}</p>`;
 };
   
@@ -67,6 +67,34 @@ const fullname = fullName(firstName, lastName);
 const bytes = displayMemoryBytes;
 const megabytes = displayMemoryMegaBytes;
 const gigabytes = displayMemoryGigaBytes;
+
+const hardwareprops = {
+  'totalMem': totalMem,
+  'bytesToMegabytes': bytesToMegabytes,
+  'bytesToGigabytes': bytesToGigabytes
+};
+const {
+ serverMachine,
+ osVersion,
+ osUptime,
+ userInfo,
+ osType,
+ osPlatform,
+ serverCpus
+} = require('./hardware.js');
+
+const displayHardwareInfo = (prop) => {
+  const result = `<span class="bytes">${hardwareprops[prop]}</span>`;
+  return `<p>${result()}</p>`;
+};
+
+ const serverMachine = serverMachine();
+ osVersion,
+ osUptime,
+ userInfo,
+ osType,
+ osPlatform,
+ serverCpus
 
 const html = `
 <!DOCTYPE html>
