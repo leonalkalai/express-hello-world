@@ -11,7 +11,7 @@ server.headersTimeout = 120 * 1000;
 
 const { argv } = require('node:process');
 const version = process.argv[2];
-if (version){
+if (version==='leon'){
   const {exportArgs} = require('./args.js');
   const displayArgs = exportArgs();
 }
@@ -132,7 +132,7 @@ const html = `
     </section>
     <section>
       <h2>${fullname}</h2>
-      <div>${version?displayArgs:''}</div>
+      <div>${version==='leon'?displayArgs:''}</div>
     </section>
   </body>
 </html>
