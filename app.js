@@ -14,7 +14,7 @@ const {
   totalMem,
   bytesToMegabytes,
   bytesToGigabytes
-} = require('./memory.js');
+} = require('./utils.js');
 
 const props = {
   'totalMem': totalMem,
