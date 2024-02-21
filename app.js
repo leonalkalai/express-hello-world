@@ -166,7 +166,7 @@ const html = `
       <div>${servermachine}</div>
       <div>${osversion}</div>
       <div>${osuptime}</div>
-      <div>${userInfo.username}</div>
+      <div>${userInfo}</div>
       <div>${ostype}</div>
       <div>${osplatform}</div>
       <div>${servercpus}</div>
