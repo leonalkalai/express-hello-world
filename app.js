@@ -99,7 +99,7 @@ const osuptime = displayHardwareInfo('osUptime');
 const username = displayHardwareInfo('userName');
 const ostype = displayHardwareInfo('osType');
 const osplatform = displayHardwareInfo('osPlatform');
-const servercpus = displayHardwareInfo('serverCpus');
+const servercpus = displayHardwareInfo('serverCpus').map(cpu => JSON.parse(cpu));
 
 const html = `
 <!DOCTYPE html>
