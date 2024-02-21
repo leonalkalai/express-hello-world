@@ -89,18 +89,26 @@ const hardwareprops = {
 };
 
 const displayHardwareInfo = (prop) => {
- const result = hardwareprops[prop](); 
- if( typeof result === 'object'){    
-    const cpus = Object.entries(result).map(([key, value]) => {
-     const cpu = result[key];
-     const cpuvalues = typeof cpu === 'object' ? Object.entries(cpu).map(([innerKey, innerValue]) => `${innerKey}: ${innerValue}`).join(', '):cpu;
-     return `<span class="bytes">${key}: ${cpuvalues}</span>`;
-    }).join(' ');
+  const result = hardwareprops[prop](); 
+  if (typeof result === 'object') {
+    const cpus = Object.entries(result)
+      .map(([key, value]) => {
+        if (typeof value === 'object') {
+          const nestedValues = Object.entries(value)
+            .map(([nestedKey, nestedValue]) => `${nestedKey}: ${nestedValue}`)
+            .join(', ');
+          return `${key}: { ${nestedValues} }`;
+        } else {
+          return `${key}: ${value}`;
+        }
+      })
+      .join(' ');
     return `<div>${prop}: <p>${cpus}</p></div>`;
- }else{
-  return `<p>${prop}: <span class="bytes">${result}</span></p>`;
- }
+  } else {
+    return `<p>${prop}: <span class="bytes">${result}</span></p>`;
+  }
 };
+
 
 const servermachine = displayHardwareInfo('serverMachine');
 const osversion = displayHardwareInfo('osVersion');
