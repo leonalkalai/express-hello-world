@@ -153,7 +153,7 @@ const html = `
         font-size: calc(62rem / 16);
       }
       body {
-        background: white;
+        background: #21232E;
       }
       section {
         border-radius: 1em;
@@ -171,6 +171,7 @@ const html = `
        padding:25px;
       }
       span{
+       border:2px solid #818AFF;
        background-color:#fff;
        color:#49B4E5;
        padding:25px;
