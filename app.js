@@ -167,10 +167,12 @@ const html = `
         */
       }
       p{
+       width:100%;
        background-color:#7BD0F2;
        padding:25px;
       }
       span{
+       width:100%;
        border:2px solid #818AFF;
        background-color:#fff;
        color:#49B4E5;
