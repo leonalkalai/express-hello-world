@@ -95,20 +95,26 @@ const displayHardwareInfo = (prop) => {
       .map(([key, value]) => {
         if (typeof value === 'object') {
           const nestedValues = Object.entries(value)
-            .map(([nestedKey, nestedValue]) => `${nestedKey}: ${nestedValue}`)
+            .map(([nestedKey, nestedValue]) => {
+              if (typeof nestedValue === 'object') {
+                // If the nested value is an object, stringify it
+                return `${nestedKey}: ${JSON.stringify(nestedValue)}`;
+              } else {
+                return `${nestedKey}: ${nestedValue}`;
+              }
+            })
             .join(', ');
           return `${key}: { ${nestedValues} }`;
         } else {
           return `${key}: ${value}`;
         }
       })
-      .join(' ');
+      .join(', '); // Join the entries with a comma
     return `<div>${prop}: <p>${cpus}</p></div>`;
   } else {
     return `<p>${prop}: <span class="bytes">${result}</span></p>`;
   }
 };
-
 
 const servermachine = displayHardwareInfo('serverMachine');
 const osversion = displayHardwareInfo('osVersion');
