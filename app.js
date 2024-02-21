@@ -97,14 +97,17 @@ const displayHardwareInfo = (prop) => {
           const nestedValues = Object.entries(value)
             .map(([nestedKey, nestedValue]) => {
               if (typeof nestedValue === 'object') {
-                // If the nested value is an object, stringify it
-                return `<span>${nestedKey}: ${JSON.stringify(nestedValue)}</span>`;
+                // For nested objects, create spans for each item
+                const nestedSpans = Object.entries(nestedValue)
+                  .map(([innerKey, innerValue]) => `<span>${innerKey}: ${innerValue}</span>`)
+                  .join('');
+                return `<span>${nestedKey}: ${nestedSpans}</span>`;
               } else {
                 return `<span>${nestedKey}: ${nestedValue}</span>`;
               }
             })
-            .join(', ');
-          return `<div>${key}: { ${nestedValues} }</div>`;
+            .join(''); // Join the nested spans
+          return `<div>${key}: <span>${nestedValues}</span></div>`;
         } else {
           return `<div>${key}: <span>${value}</span></div>`;
         }
@@ -115,6 +118,7 @@ const displayHardwareInfo = (prop) => {
     return `<p>${prop}: <span class="bytes">${result}</span></p>`;
   }
 };
+
 
 
 const servermachine = displayHardwareInfo('serverMachine');
