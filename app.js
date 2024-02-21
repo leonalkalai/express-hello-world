@@ -171,11 +171,11 @@ const html = `
        width:100%;
        border:2px solid #363A4A;
        background-color:#343848;
-       padding:25px;
-       
+       padding:25px; 
       }
       span{
        width:100%;
+       display:block;
        border:2px solid #818AFF;
        background-color:#1F7C77;
        color:#fff;
