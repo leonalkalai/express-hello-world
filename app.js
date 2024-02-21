@@ -116,7 +116,6 @@ const displayHardwareInfo = (prop) => {
   }
 };
 
-};
 
 const servermachine = displayHardwareInfo('serverMachine');
 const osversion = displayHardwareInfo('osVersion');
