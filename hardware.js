@@ -6,7 +6,7 @@ const osUptime = () => os.uptime();
 const userName = () => os.userInfo().username;
 const osType = () => os.type();
 const osPlatform = () => os.platform();
-const serverCpus = () => os.cpus().map( cpu => JSON.parse(cpu) );
+const serverCpus = () => os.cpus();
 
 module.exports = {
  serverMachine,
