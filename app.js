@@ -90,7 +90,7 @@ const hardwareprops = {
 
 const displayHardwareInfo = (prop) => {
   const result = hardwareprops[prop](); 
-  return `<span class="bytes"><p>${prop}: ${result}</p></span>`;
+  return `<p>${prop}: <span class="bytes">${result}</span></p>`;
 };
 
 const servermachine = displayHardwareInfo('serverMachine');
@@ -99,9 +99,7 @@ const osuptime = displayHardwareInfo('osUptime');
 const username = displayHardwareInfo('userName');
 const ostype = displayHardwareInfo('osType');
 const osplatform = displayHardwareInfo('osPlatform');
-const servercpusobj = displayHardwareInfo('serverCpus');
-//const servercpus = servercpusobj.map( ( cpu,index) => cpu );
-const servercpus = typeof(servercpusobj);
+const servercpus = displayHardwareInfo('serverCpus');
 
 const html = `
 <!DOCTYPE html>
