@@ -107,7 +107,7 @@ const displayHardwareInfo = (prop) => {
               }
             })
             .join(''); // Join the nested spans
-          return `<div><span class="blue">${key}:</span> <span>${nestedValues}</span></div>`;
+          return `<div><span class="blue">${key}:</span> <span class="green">${nestedValues}</span></div>`;
         } else {
           return `<div>${key}: <span>${value}</span></div>`;
         }
@@ -177,7 +177,7 @@ const html = `
        width:100%;
        display:block;
        border:2px solid #818AFF;
-       background-color:#1F7C77;
+       background-color:#343848;
        color:#fff;
        padding:25px;
        line-height:3em;
@@ -190,6 +190,10 @@ const html = `
       span.blue{
        background-color:#6268BB;
        color:#fff;
+       padding:25px;
+      }
+      span.green{
+       color:#1F7C77;
       }
     </style>
   </head>
