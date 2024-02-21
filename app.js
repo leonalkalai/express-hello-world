@@ -102,6 +102,9 @@ const osplatform = displayHardwareInfo('osPlatform');
 const servercpusobj = displayHardwareInfo('serverCpus');
 //const servercpus = servercpusobj.map( ( cpu,index) => cpu );
 const servercpus = typeof(servercpusobj);
+
+console.log(userInfo);
+
 const html = `
 <!DOCTYPE html>
 <html>
