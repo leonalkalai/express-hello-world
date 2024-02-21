@@ -8,6 +8,8 @@ const osType = () => os.type();
 const osPlatform = () => os.platform();
 const serverCpus = () => os.cpus();
 
+console.log(userInfo);
+
 module.exports = {
  serverMachine,
  osVersion,
