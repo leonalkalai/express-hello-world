@@ -89,8 +89,8 @@ const hardwareprops = {
 };
 
 const displayHardwareInfo = (prop) => {
- const result = hardwareprops[prop](); 
-  return `<p>${prop}: <span class="bytes">${typeof result === 'object' ? result.map(cpu => ({ ...cpu })) : result}</span></p>`;
+ const result = typeof hardwareprops[prop]() === 'object' ?hardwareprops[prop]().map(cpu => ({ ...cpu })) : hardwareprops[prop](); 
+  return `<p>${prop}: <span class="bytes">${result}</span></p>`;
 };
 
 const servermachine = displayHardwareInfo('serverMachine');
