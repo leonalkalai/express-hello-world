@@ -107,9 +107,9 @@ const displayHardwareInfo = (prop) => {
               }
             })
             .join(''); // Join the nested spans
-          return `<div>${key}: <span>${nestedValues}</span></div>`;
+          return `<div><span class="blue">${key}:</span> <span>${nestedValues}</span></div>`;
         } else {
-          return `<div><span class="blue">${key}:</span> <span>${value}</span></div>`;
+          return `<div>${key}: <span>${value}</span></div>`;
         }
       })
       .join(' '); // Join the entries with a space
