@@ -96,7 +96,7 @@ const displayHardwareInfo = (prop) => {
     Object.entries(result).forEach(([key, value]) => {
       cpus[key] = value;
      });
-  return `<p>${prop}: <span class="bytes">${JSON.stringify(cpus}</span></p>`;
+  return `<p>${prop}: <span class="bytes">${JSON.stringify(cpus)}</span></p>`;
  }else{
   return `<p>${prop}: <span class="bytes">${result}</span></p>`;
  }
