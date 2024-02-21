@@ -30,13 +30,13 @@ const serverCpus = () => os.cpus().map((cpu, index) => ({
     index: index,
     model: cpu.model,
     speed: cpu.speed,
-    times: cpu.times.map(time => ({
-        user: time.user,
-        nice: time.nice,
-        sys: time.sys,
-        idle: time.idle,
-        irq: time.irq
-    }))
+    times: {
+        user: cpu.times.user,
+        nice: cpu.times.nice,
+        sys: cpu.times.sys,
+        idle: cpu.times.idle,
+        irq: cpu.times.irq
+    }
 }));
 
 module.exports = {
