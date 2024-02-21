@@ -89,8 +89,8 @@ const hardwareprops = {
 };
 
 const displayHardwareInfo = (prop) => {
-  const result = `<span class="bytes">${prop}: ${hardwareprops[prop]}</span>`;
-  return `<p>${result}</p>`;
+  const result = `${hardwareprops[prop]()}`;
+  return `<span class="bytes"><p>${prop}:  ${result}</p></span>`;
 };
 
 const servermachine = displayHardwareInfo('serverMachine');
@@ -166,7 +166,7 @@ const html = `
       <div>${servermachine}</div>
       <div>${osversion}</div>
       <div>${osuptime}</div>
-      <div>${JSON.stringify(userInfo.username)}</div>
+      <div>${userInfo.username}</div>
       <div>${ostype}</div>
       <div>${osplatform}</div>
       <div>${servercpus}</div>
