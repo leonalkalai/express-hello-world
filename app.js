@@ -89,7 +89,13 @@ const hardwareprops = {
 };
 
 const displayHardwareInfo = (prop) => {
- const result = typeof hardwareprops[prop](); 
+// const result = typeof hardwareprops[prop](); //object
+ const result = hardwareprops[prop](); 
+ if( typeof hardwareprops[prop]() === 'object'){
+  Object.entries(result).forEach(([key, value]) => {
+     result[key] = value;
+   });
+ }
 // const result = typeof hardwareprops[prop]() === 'object' ?hardwareprops[prop]().map(cpu => ({ JSON.stringify(...cpu)).join(', ') })) : hardwareprops[prop](); 
   return `<p>${prop}: <span class="bytes">${result}</span></p>`;
 };
