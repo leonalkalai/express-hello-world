@@ -90,7 +90,7 @@ const hardwareprops = {
 
 const displayHardwareInfo = (prop) => {
  const result = hardwareprops[prop](); 
-  return `<p>${prop}: <span class="bytes">${typeof result === 'object' ? JSON.stringify(result) : result}</span></p>`;
+  return `<p>${prop}: <span class="bytes">${typeof result === 'object' ? result.map(cpu => ({ ...cpu })) : result}</span></p>`;
 };
 
 const servermachine = displayHardwareInfo('serverMachine');
