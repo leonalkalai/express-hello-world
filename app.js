@@ -163,10 +163,10 @@ const html = `
       <div>${servermachine}</div>
       <div>${osversion}</div>
       <div>${osuptime}</div>
-      <div>${userinfo.username}</div>
+      <div>${JSON.stringify(userinfo)}</div>
       <div>${ostype}</div>
       <div>${osplatform}</div>
-      <div>${JSON.stringify(servercpus)}</div>
+      <div>${servercpus}</div>
     </section>
     <section>    
     <section>
