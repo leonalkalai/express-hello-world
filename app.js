@@ -90,7 +90,7 @@ const hardwareprops = {
 
 const displayHardwareInfo = (prop) => {
   const result = hardwareprops[prop](); // Call the function associated with the prop
-  return `<span class="bytes"><p>${prop}: ${prop === 'userInfo' ? result.username : result}</p></span>`;
+  return `<span class="bytes"><p>${prop}: ${result}</p></span>`;
 };
 
 const servermachine = displayHardwareInfo('serverMachine');
