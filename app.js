@@ -101,15 +101,15 @@ const displayHardwareInfo = (prop) => {
                 const nestedSpans = Object.entries(nestedValue)
                   .map(([innerKey, innerValue]) => `<span>${innerKey}: ${innerValue}</span>`)
                   .join('');
-                return `<span>${nestedKey}: ${nestedSpans}</span>`;
+                return `<span>${nestedKey}:</span> <span class="green">${nestedSpans}</span>`;
               } else {
-                return `<span>${nestedKey}: ${nestedValue}</span>`;
+                return `<span>${nestedKey}:</span> <span class="green">${nestedValue}</span>`;
               }
             })
             .join(''); // Join the nested spans
-          return `<div><span class="blue">${key}:</span> <span class="green">${nestedValues}</span></div>`;
+          return `<div><span class="blue">${key}:</span>${nestedValues}</div>`;
         } else {
-          return `<div>${key}: <span>${value}</span></div>`;
+          return `<div><span class="blue">${key}:</span> <span>${value}</span></div>`;
         }
       })
       .join(' '); // Join the entries with a space
