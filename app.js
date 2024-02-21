@@ -89,7 +89,7 @@ const hardwareprops = {
 };
 
 const displayHardwareInfo = (prop) => {
-  const result = `<span class="bytes">${prop}: ${hardwareprops[prop]()}</span>`;
+  const result = `<span class="bytes">${prop}: ${hardwareprops[prop]}</span>`;
   return `<p>${result}</p>`;
 };
 
