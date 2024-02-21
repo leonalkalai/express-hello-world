@@ -109,7 +109,7 @@ const displayHardwareInfo = (prop) => {
             .join(''); // Join the nested spans
           return `<div>${key}: <span>${nestedValues}</span></div>`;
         } else {
-          return `<div>${key}: <span>${value}</span></div>`;
+          return `<div><span class="blue">${key}:</span> <span>${value}</span></div>`;
         }
       })
       .join(' '); // Join the entries with a space
@@ -186,6 +186,10 @@ const html = `
        background-color:#DEDFDA;
        color:#2E327A;
        padding:25px;
+      }
+      span.blue{
+       background-color:#6268BB;
+       color:#fff;
       }
     </style>
   </head>
