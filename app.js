@@ -154,6 +154,7 @@ const html = `
       }
       body {
         background: #21232E;
+        color:#FFFFFF;
       }
       section {
         border-radius: 1em;
@@ -168,14 +169,16 @@ const html = `
       }
       p{
        width:100%;
-       background-color:#7BD0F2;
+       border:2px solid #363A4A;
+       background-color:#343848;
        padding:25px;
+       
       }
       span{
        width:100%;
        border:2px solid #818AFF;
-       background-color:#fff;
-       color:#49B4E5;
+       background-color:#1F7C77;
+       color:#fff;
        padding:25px;
        line-height:3em;
       }
