@@ -72,7 +72,7 @@ const {
  serverMachine,
  osVersion,
  osUptime,
- userInfo,
+ userName,
  osType,
  osPlatform,
  serverCpus
@@ -82,7 +82,7 @@ const hardwareprops = {
   'serverMachine': serverMachine,
   'osVersion': osVersion,
   'osUptime': osUptime,
-  'userInfo': userInfo,
+  'userName': userName,
   'osType': osType,
   'osPlatform': osPlatform,
   'serverCpus': serverCpus
@@ -96,7 +96,7 @@ const displayHardwareInfo = (prop) => {
 const servermachine = displayHardwareInfo('serverMachine');
 const osversion = displayHardwareInfo('osVersion');
 const osuptime = displayHardwareInfo('osUptime');
-const userinfo = displayHardwareInfo('userInfo');
+const username = displayHardwareInfo('userName');
 const ostype = displayHardwareInfo('osType');
 const osplatform = displayHardwareInfo('osPlatform');
 const servercpusobj = displayHardwareInfo('serverCpus');
@@ -166,7 +166,7 @@ const html = `
       <div>${servermachine}</div>
       <div>${osversion}</div>
       <div>${osuptime}</div>
-      <div>${userInfo}</div>
+      <div>${username}</div>
       <div>${ostype}</div>
       <div>${osplatform}</div>
       <div>${servercpus}</div>
